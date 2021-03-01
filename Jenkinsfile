@@ -14,16 +14,14 @@ pipeline {
             steps {
                 // Download and change directory into repo
                 sh 'rm -rf Devops-Bootcamp-Capstone-Project'
-                sh 'git clone https://github.com/kbelle-max/Devops-Bootcamp-Capstone-Project.gi'
+                sh 'git clone https://github.com/kbelle-max/Devops-Bootcamp-Capstone-Project.git'
                 sh 'cd Devops-Bootcamp-Capstone-Project'
-                //  Building new image from repo
-                sh 'docker image build -t $DOCKER_HUB_REPO .'
-                sh 'docker image tag $DOCKER_HUB_REPO $DOCKER_HUB_REPO'
+
 
 
             }
         }
-        }
+        
         stage('Deploy') {
             steps {
                 script{
@@ -34,5 +32,6 @@ pipeline {
                        }
                     }
                          }
+    }
 
 }
