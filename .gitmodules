@@ -1,0 +1,6 @@
+[submodule "submodules/docker-elk"]
+	path = submodules/docker-elk
+	url = https://github.com/deviantony/docker-elk.git
+[submodule "submodules/sba.kubernetes-cluster"]
+	path = submodules/sba.kubernetes-cluster
+	url = https://github.com/kbelle-max/sba.kubernetes-cluster.git
