@@ -1,7 +1,8 @@
 
 pipeline {
     agent any
-    triggers{pollSCM('') 
+    triggers{
+        pollSCM('') 
     }
     environment {
         DOCKER_HUB_REPO = "kbelle/case_study1"
@@ -16,6 +17,7 @@ pipeline {
                 sh 'rm -rf Devops-Bootcamp-Capstone-Project'
                 sh 'git clone https://github.com/kbelle-max/Devops-Bootcamp-Capstone-Project.git'
                 sh 'cd Devops-Bootcamp-Capstone-Project'
+            
 
 
 
@@ -25,7 +27,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{
-                    // Deploy application
+                    // Deploy independant application
                     sh 'docker stop $CONTAINER_NAME:latest || docker rm $CONTAINER_NAME:latest || docker run -d -p 5050:5050 $DOCKER_HUB_REPO:latest'
                     // Run playbook 
                     sh 'ansible-playbook playbook.yml'

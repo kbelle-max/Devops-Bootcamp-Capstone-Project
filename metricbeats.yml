@@ -1,0 +1,49 @@
+output.elasticsearch:
+  hosts: ["localhost:9200"]
+  username: "elastic"
+  password: "changeme"
+  setup.kibana:
+    host: "localhost:5601" 
+    username: "elastic"  
+    password: "changeme"
+metricbeat.modules:
+- module: docker
+  metricsets:
+    - container
+    - cpu
+    - diskio
+    - healthcheck
+    - info
+    - memory
+    - network
+  hosts: ["unix:///var/run/docker.sock"]
+  period: 10s
+  enabled: true
+
+- module: kubernetes
+  enabled: true
+  metricsets:
+    - proxy
+  hosts: ["localhost:10249"]
+  period: 10s
+
+
+  # Enriching parameters:
+  add_metadata: true
+  in_cluster: true
+- module: system
+  metricsets:
+      - cpu
+      - load
+      - memory
+      - network
+      - process
+      - process_summary
+      - socket_summary
+      #- entropy
+      - core
+      - diskio
+     # - socket
+  period: 1s
+setup.dashboards.enabled: true
+
