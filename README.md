@@ -1,6 +1,6 @@
 ## Devops Capstone Project
 ### Project Details
-    Capstone project utilizing popular devops tools to deploying a flask application within a Kubernetes cluster and independantly through a docker container. Docker application was forwarded to local port (localhost:5050) for monitoring purposes. Elastick stack configuration monitors active system resources for docker containers, flask application and Kubernetes clusters as well as an overview of system resources.
+    Capstone project utilizing popular devops tools to deploying a flask application within a Kubernetes cluster and a docker container. Docker application was forwarded to local port (localhost:5050) for monitoring purposes. Elastick stack configuration monitors active system resources for docker containers, flask application and kubernetes clusters as well as an overview of system resources.
 ### Requirements
 * jenkins
 * docker
