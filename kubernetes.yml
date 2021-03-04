@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: brown-fox-deployment
+  labels:
+    app: brown-fox
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: case-study1
+        image: kbelle/case_study1:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000

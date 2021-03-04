@@ -1,0 +1,10 @@
+---
+- name: Playing with Ansible and Git
+  hosts: localhost
+  connection: local 
+  tasks:
+      - name : starting microk8s cli
+        shell: microk8s start || echo microk8s already running....
+
+      - name: Initialize cluster using kubectl
+        shell: kubectl create -f kubernetes.yml || kubectl rollout restart deployments/brown-fox-deployment

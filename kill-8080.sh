@@ -1,4 +1,4 @@
-kill -kill `lsof -t -i tcp:8080`
+kill -kill `lsof -t -i tcp:5666`
 kill -kill `lsof -t -i tcp:8081`
 kill -kill `lsof -t -i tcp:8082`
 kill -kill `lsof -t -i tcp:8083`
