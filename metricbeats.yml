@@ -45,5 +45,21 @@ metricbeat.modules:
       - diskio
      # - socket
   period: 1s
+  metricbeat.modules:
+- module: http
+  #metricsets:
+  #  - json
+  period: 10s
+  hosts: ["localhost:5050"]
+  namespace: "brown-fox-deployment"
+  path: "/"
+  #body: ""
+  #method: "GET"
+  #username: "user"
+  #password: "secret"
+  #request.enabled: false
+  #response.enabled: false
+  #json.is_array: false
+  #dedot.enabled: false
 setup.dashboards.enabled: true
 

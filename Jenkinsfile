@@ -2,7 +2,7 @@
 pipeline {
     agent any
     triggers{
-        pollSCM('') 
+        cron('H/5 * * * *')
     }
     environment {
         DOCKER_HUB_REPO = "kbelle/case_study1"
